@@ -34,6 +34,14 @@ public class UserDetails {
 	
 	@Column(name="is_used")
 	private boolean isUsed;
+	
+	private boolean active;
+	
+	@Column(name="scan_count")
+	private int scancount = 0;
+	
+	@Column(name="last_scanned_at")
+	private LocalDateTime lastScannedAt;
 
 	public long getUserId() {
 		return userId;
@@ -89,6 +97,30 @@ public class UserDetails {
 
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	public int getScancount() {
+		return scancount;
+	}
+
+	public void setScancount(int scancount) {
+		this.scancount = scancount;
+	}
+
+	public LocalDateTime getLastScannedAt() {
+		return lastScannedAt;
+	}
+
+	public void setLastScannedAt(LocalDateTime lastScannedAt) {
+		this.lastScannedAt = lastScannedAt;
 	}
 	
 }
