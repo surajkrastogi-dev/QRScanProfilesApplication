@@ -55,3 +55,14 @@ Url- https://infinitesimally-venomless-hope.ngrok-free.dev/
 
 5.exeute the ngrok 
 ngrok http 8090
+
+# SpringSecurityWithOAuth2
+Implemented the Spring Security WIth the OAuth-2.0 in Microservices.
+#. if any error of pull request rule voilation due to add the secret and password in the commit then use these git command
+git checkout --orphan clean-main
+git rm -rf --cached .
+git add .
+git commit -m "Clean config: remove all secrets and use env variables"
+git branch -D main
+git branch -m main
+git push -u origin main --force
