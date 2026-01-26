@@ -26,7 +26,7 @@ public class ProfileViewDetails {
 	private final QrCodeService qrCodeService;
 	
 	@GetMapping("/view")
-	public String getProfileview(String token,Model model) throws Exception {
+	public String getProfileview(@RequestParam("token") String token,Model model) throws Exception {
 		//check token and expiry and isUed
 		UserDetails user = userRepo.findByUserToken(token)
 				.orElseThrow(()-> new RuntimeException("Token Invalid"));

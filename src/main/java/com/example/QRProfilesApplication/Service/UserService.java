@@ -1,7 +1,10 @@
 package com.example.QRProfilesApplication.Service;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
+
 import com.example.QRProfilesApplication.Config.ProfileUrlConfig;
 import com.example.QRProfilesApplication.Config.TokenGeneration;
 import com.example.QRProfilesApplication.Entity.UserDetails;
@@ -19,6 +22,12 @@ public class UserService {
 	private final TokenGeneration tokenGen;
 	
 	public UserDetails saveUserDetails(UserRequest request) {
+		
+		Optional<UserDetails> existingUser = userRepo.findByUserEmail(request.getEmail());
+
+	    if (existingUser.isPresent()) {
+	        throw new RuntimeException("Email already exists");
+	    }
 		
 		return userRepo.findByUserEmail(request.getEmail())
 		.orElseGet(()->{
