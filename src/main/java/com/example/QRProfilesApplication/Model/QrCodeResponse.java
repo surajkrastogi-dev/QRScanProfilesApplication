@@ -5,12 +5,14 @@ public class QrCodeResponse {
 	private String token;
 	private String profileUrl;
 	private String qrBase64;
+	private String message;
 	
-	public QrCodeResponse(String token, String profileUrl, String qrBase64) {
+	public QrCodeResponse(String token, String profileUrl, String qrBase64,String message) {
 		super();
 		this.token = token;
 		this.profileUrl = profileUrl;
 		this.qrBase64 = qrBase64;
+		this.message = message;
 	}
 	
 	public String getToken() {
@@ -30,6 +32,14 @@ public class QrCodeResponse {
 	}
 	public void setQrBase64(String qrBase64) {
 		this.qrBase64 = qrBase64;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 	
 }
