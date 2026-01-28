@@ -40,6 +40,8 @@ public class UserService {
 			user.setUserToken(tokenGen.generateToken());
 			user.setUsed(false);
 			user.setExpiryTime(LocalDateTime.now().plusMinutes(10));
+			user.setActive(true);
+	        user.setScancount(0);
 			userRepo.save(user);
 			return user;
 		});

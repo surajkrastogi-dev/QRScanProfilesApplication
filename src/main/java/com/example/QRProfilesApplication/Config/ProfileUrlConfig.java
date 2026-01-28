@@ -13,4 +13,8 @@ public class ProfileUrlConfig {
 		return baseUrl+"/user/view?token="+token;
 	}
 	
+	public String getBaseUrl() {
+		return baseUrl;
+	}
+	
 }
