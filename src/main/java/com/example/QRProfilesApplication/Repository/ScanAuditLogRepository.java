@@ -8,7 +8,7 @@ import com.example.QRProfilesApplication.Entity.ScanAuditLog;
 @Repository
 public interface ScanAuditLogRepository extends JpaRepository<ScanAuditLog, Long>{
 
-//	@Query("Select u from ScanAuditLog u where ")
+//	@Query("Select u from ScanAuditLog u where u.audit_token=?1 order by u.scanned_at_time desc limit 20")
 	List<ScanAuditLog> findTop20ByAuditTokenOrderByScannedAtTimeDesc(String token);
 	
 }
